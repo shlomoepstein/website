@@ -8,10 +8,9 @@
 }
 
 body {
-   width: 10000px;
-   height: 10000px;
-   position: absolute;
-   margin: -5000px 0px 0px -5000px;
+   width: 2000px;
+   height: 2000px;
+   margin: -1000px 0px 0px -1000px;
    scrollbar-width: none;
    
    background:
@@ -21,9 +20,8 @@ body {
 }
 
 p {
-   width: 1000px;
-   height: 1000px;
-   position: absolute;
+   width: 500px;
+   height: 500px;
    
    background-color: red;;
    font-size: 100px;
