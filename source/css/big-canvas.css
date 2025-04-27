@@ -6,6 +6,8 @@
    --dot-size: 10px;
 /*   --dot-space: 22px;*/
    --dot-space: 100px;
+   --stop-1: calc(var(--dot-size) / 2);
+   --stop-2: calc(var(--dot-space) - calc(var(--dot-size) / 2));
    
    font-family: system-ui, sans-serif;
 }
@@ -25,15 +27,16 @@ body {
    background:
       linear-gradient(
          90deg,
-
+         
+         transparent
+         var(--stop-1),
+         
          var(--dot-bg-2)
-         calc(
-            var(--dot-space) -
-            var(--dot-size)
-         ),
+         var(--stop-1)
+         var(--stop-2),
 
          transparent
-         1%
+         var(--stop-2)
       )
       top left /
       var(--dot-space)
