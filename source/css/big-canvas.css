@@ -10,7 +10,7 @@
 body {
    width: 10000px;
    height: 10000px;
-   margin: -50px 0px 0px -50px;
+   position: absolute;
    scrollbar-width: none;
 
    background:
@@ -22,6 +22,8 @@ body {
 #id-1 {
    width: 500px;
    height: 500px;
+   position: absolute;
+   inset: 5000px;
    
    background-color: red;;
    font-size: 100px;
