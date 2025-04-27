@@ -8,10 +8,10 @@
 }
 
 body {
-   width: 10000px;
-   height: 10000px;
+   width: 1000px;
+   height: 1000px;
    position: absolute;
-   margin: -5000px 0px 0px -5000px;
+   margin: -500px 0px 0px -500px;
    scrollbar-width: none;
    
    background:
