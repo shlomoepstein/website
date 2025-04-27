@@ -8,10 +8,10 @@
 }
 
 body {
-/*   width: 10000px;*/
-/*   height: 10000px;*/
+   width: 10000px;
+   height: 10000px;
    margin: -50px 0px 0px -50px;
-/*   scrollbar-width: none;*/
+   scrollbar-width: none;
 
    background:
       linear-gradient(90deg, var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
