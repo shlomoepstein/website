@@ -8,8 +8,9 @@
 }
 
 body {
-   width: 1000000px;
-   height: 1000000px;
+   width: 10000px;
+   height: 10000px;
+   margin: -5000px 0px 0px -5000px;
    scrollbar-width: none;
    
    background:
