@@ -4,7 +4,7 @@
 /*   --dot-size: 1px;*/
    --dot-size: 10px;
 /*   --dot-space: 22px;*/
-   --dot-space: 20px;
+   --dot-space: 100px;
    
    font-family: system-ui, sans-serif;
 }
