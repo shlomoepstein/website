@@ -17,6 +17,7 @@
 body {
    width: 200px;
    height: 200px;
+   outline: 5px solid red;
    position: absolute;
 
    background:
