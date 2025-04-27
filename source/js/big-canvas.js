@@ -1,3 +1,4 @@
+window.onLoad = () => {
 let body = document.querySelector("body");
 
 let width = body.scrollWidth,
@@ -5,8 +6,9 @@ let width = body.scrollWidth,
     vp_width = window.innerWidth,
     vp_height = window.innerHeight;
 
-window.jump_to_origin = () =>
+let jump_to_origin = () =>
    window.scrollTo(
      // (width / 2) - (vp_width / 2),
      // (height / 2) - (vp_height / 2)
    0, 0);
+}
