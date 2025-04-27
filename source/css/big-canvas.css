@@ -70,7 +70,7 @@ body {
       auto;
 
    div {
-      --size: calc(var(--dot-size) * 1);
+      --size: calc(var(--dot-size) * 2);
       --half-size: calc(var(--size) / 2);
 
       width: var(--size);
