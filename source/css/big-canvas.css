@@ -1,11 +1,11 @@
 :root {
    --dot-bg: #FFF3E3;
-   --dot-bg-2: green;
    --dot-color: #362B1E;
 /*   --dot-size: 1px;*/
    --dot-size: 10px;
 /*   --dot-space: 22px;*/
    --dot-space: 100px;
+
    --stop-1: calc(var(--dot-size) / 2);
    --stop-2: calc(var(--dot-space) - calc(var(--dot-size) / 2));
    
@@ -31,7 +31,7 @@ body {
          transparent
          var(--stop-1),
          
-         var(--dot-bg-2)
+         var(--dot-bg)
          var(--stop-1)
          var(--stop-2),
 
@@ -40,8 +40,7 @@ body {
       )
       top left /
       var(--dot-space)
-      var(--dot-space)
-      /*no-repeat*/,
+      var(--dot-space),
 
       linear-gradient(
          180deg,
@@ -58,8 +57,7 @@ body {
       )
       top left /
       var(--dot-space)
-      var(--dot-space)
-      /*no-repeat*/,
+      var(--dot-space),
 
       var(--dot-color);
 }
