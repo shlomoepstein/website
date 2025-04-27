@@ -29,11 +29,13 @@ body {
             var(--dot-size)
          ),
 
-         transparent 1%
+         transparent
+         1%
       )
       center /
       var(--dot-space)
-      var(--dot-space),
+      var(--dot-space)
+      no-repeat,
 
       linear-gradient(
          var(--dot-bg)
@@ -42,13 +44,16 @@ body {
             var(--dot-size)
          ),
 
-         transparent 1%
+         transparent
+         1%
       )
       center /
       var(--dot-space)
-      var(--dot-space),
+      var(--dot-space)
+      no-repeat,
 
-      var(--dot-color);
+      var(--dot-color)
+      no-repeat;
 }
 
 #origin {
