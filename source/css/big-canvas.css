@@ -36,7 +36,7 @@ body {
       top left /
       var(--dot-space)
       var(--dot-space)
-      no-repeat,
+      /*no-repeat*/,
 
       linear-gradient(
          180deg,
