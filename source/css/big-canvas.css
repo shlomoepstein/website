@@ -66,6 +66,10 @@ body {
    height: var(--size);
    position: absolute;
    inset: calc(50% - var(--dot-size));
+   
+   margin:
+      calc((100svh - var(--size)) / 2)
+      calc((100svw - var(--size)) / 2);
 
    background-color: red;
 }
