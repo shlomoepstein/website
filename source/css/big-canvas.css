@@ -78,7 +78,7 @@ body {
       position: absolute;
       inset:
          calc(50svh - var(--half-size))
-         calc(50svw - var(--half-size))
+         calc(50svw + var(--half-size))
          auto
          auto;
 
