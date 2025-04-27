@@ -5,7 +5,7 @@ let width = body.scrollWidth,
     vp_width = window.innerWidth,
     vp_height = window.innerHeight;
 
-var jump_to_origin = () =>
+window.jump_to_origin = () =>
    window.scrollTo(
      // (width / 2) - (vp_width / 2),
      // (height / 2) - (vp_height / 2)
