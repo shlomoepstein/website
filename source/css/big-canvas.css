@@ -51,9 +51,8 @@ body {
       center /
       var(--dot-space)
       var(--dot-space)
-      no-repeat,
+      /*no-repeat*/,
 
-      no-repeat
       var(--dot-color);
 }
 
