@@ -26,7 +26,7 @@ body {
    position: absolute;
    inset: 50%;
    border: 10px solid blue;
-   border-radius: 5px;
+   border-radius: 15px;
    
    background-color: red;
 }
