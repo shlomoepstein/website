@@ -1,5 +1,6 @@
 :root {
    --dot-bg: #FFF3E3;
+   --dot-bg-2: green;
    --dot-color: #362B1E;
 /*   --dot-size: 1px;*/
    --dot-size: 100px;
@@ -22,7 +23,7 @@ body {
       linear-gradient(
          90deg,
 
-         var(--dot-bg)
+         var(--dot-bg-2)
          calc(
             var(--dot-space) -
             var(--dot-size)
