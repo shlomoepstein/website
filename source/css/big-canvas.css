@@ -1,0 +1,18 @@
+:root {
+   --dot-bg: #FFF3E3;
+   --dot-color: #362B1E;
+   --dot-size: 1px;
+   --dot-space: 22px;
+   
+   font-family: system-ui, sans-serif;
+}
+
+body {
+   width: 1000000px;
+   height: 1000000px;
+   
+   background:
+      linear-gradient(90deg, var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
+      linear-gradient(var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
+      var(--dot-color);
+}
