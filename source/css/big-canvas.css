@@ -1,8 +1,10 @@
 :root {
    --dot-bg: #FFF3E3;
    --dot-color: #362B1E;
-   --dot-size: 1px;
-   --dot-space: 22px;
+/*   --dot-size: 1px;*/
+   --dot-size: 10px;
+/*   --dot-space: 22px;*/
+   --dot-space: 20px;
    
    font-family: system-ui, sans-serif;
 }
