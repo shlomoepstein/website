@@ -4,8 +4,11 @@
    --dot-size: 1px;
    --dot-space: 22px;
    
-   box-sizing: border-box;
    font-family: system-ui, sans-serif;
+}
+
+* {
+   box-sizing: border-box;
 }
 
 body {
