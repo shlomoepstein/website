@@ -20,3 +20,6 @@ body {
       var(--dot-color);
 }
 
+#id-1 {
+   font-size: 100px;
+}
