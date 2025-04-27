@@ -22,5 +22,6 @@ body {
 }
 
 #id-1 {
+   position: absolute;
    font-size: 100px;
 }
