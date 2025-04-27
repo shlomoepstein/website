@@ -86,9 +86,9 @@ body {
    }
 }
 
-#jump-to-origin {
+#jump-to-origin a {
    position: fixed;
-   top: 0.7em;
+   top: 0.3em;
    right: 0.3em;
 }
 
