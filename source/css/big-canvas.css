@@ -50,9 +50,9 @@ body {
       center /
       var(--dot-space)
       var(--dot-space)
-      no-repeat/*,
+      no-repeat,
 
-      var(--dot-color)
+      var(--dot-color)/*
       no-repeat;*/
 }
 
