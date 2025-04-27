@@ -74,7 +74,7 @@ body {
       height: var(--size);
       position: absolute;
       top: calc(50svh - var(--half-size));
-      left: calc(var(--half-size) - 50svw);
+      left: calc(-50svw - var(--half-size));
 
       background-color: red;
    }
