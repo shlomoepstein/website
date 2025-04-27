@@ -60,14 +60,12 @@ body {
 }
 
 #origin {
-   width: var(--dot-size);
-   height: var(--dot-size);
+   --size: calc(var(--dot-size) * 2);
+
+   width: var(--size);
+   height: var(--size);
    position: absolute;
-   inset:
-      calc(
-         50% -
-         calc(var(--dot-size) / 2)
-      );
-   
+   inset: calc(50% - var(--dot-size));
+
    background-color: red;
 }
