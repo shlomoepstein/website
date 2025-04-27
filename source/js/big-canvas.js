@@ -7,6 +7,6 @@ let width = body.scrollWidth,
 
 let jump_to_origin = () =>
    window.scrollTo(
-      (width / 2) - (vp_width / 2),
-      (height / 2) - (vp_height / 2)
-   );
+     // (width / 2) - (vp_width / 2),
+     // (height / 2) - (vp_height / 2)
+   0, 0);
