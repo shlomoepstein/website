@@ -5,7 +5,7 @@
    --dot-space: 50px;
 
    --stop-1: calc(var(--dot-size) / 2);
-   --stop-2: calc(var(--dot-space) - calc(var(--dot-size) / 2));
+   --stop-2: calc(var(--dot-space) - (var(--dot-size) / 2));
    
    font-family: system-ui, sans-serif;
 }
@@ -84,4 +84,17 @@ body {
 
       background-color: red;
    }
+}
+
+#jump-to-origin {
+   position: fixed;
+   top: 0.3em;
+   right: 0.3em;
+}
+
+.nav-button {
+   padding: 0.4em;
+   border: 1px solid #999;
+   border-radius: 7px;
+   background-color: #EFE3D3;
 }
