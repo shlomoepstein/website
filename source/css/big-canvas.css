@@ -48,7 +48,7 @@ body {
          transparent
          1%
       )
-      center /
+      top left /
       var(--dot-space)
       var(--dot-space)
       /*no-repeat*/,
