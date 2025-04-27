@@ -4,6 +4,7 @@
    --dot-size: 1px;
    --dot-space: 22px;
    
+   box-sizing: border-box;
    font-family: system-ui, sans-serif;
 }
 
@@ -11,7 +12,7 @@ body {
    width: 10000px;
    height: 10000px;
    position: absolute;
-   scrollbar-width: none;
+   scrollbar: none;
 
    background:
       linear-gradient(90deg, var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
@@ -20,10 +21,12 @@ body {
 }
 
 #origin {
-   width: 10px;
-   height: 10px;
+   width: 30px;
+   height: 30px;
    position: absolute;
    inset: 50%;
+   border: 10px solid blue;
+   border-radius: 5px;
    
    background-color: red;
 }
