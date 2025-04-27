@@ -20,11 +20,10 @@ body {
 }
 
 #origin {
-   width: 500px;
-   height: 500px;
+   width: 10px;
+   height: 10px;
    position: absolute;
-   inset: 5000px;
+   inset: 50%;
    
-   background-color: red;;
-   font-size: 100px;
+   background-color: red;
 }
