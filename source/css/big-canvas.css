@@ -10,6 +10,7 @@
 body {
    width: 10000px;
    height: 10000px;
+   position: absolute;
    margin: -5000px 0px 0px -5000px;
    scrollbar-width: none;
    
@@ -18,3 +19,4 @@ body {
       linear-gradient(var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
       var(--dot-color);
 }
+
