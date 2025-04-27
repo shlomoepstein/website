@@ -1,10 +1,8 @@
 :root {
    --dot-bg: #FFF3E3;
    --dot-color: #362B1E;
-/*   --dot-size: 1px;*/
-   --dot-size: 10px;
-/*   --dot-space: 22px;*/
-   --dot-space: 100px;
+   --dot-size: 2px;
+   --dot-space: 10px;
 
    --stop-1: calc(var(--dot-size) / 2);
    --stop-2: calc(var(--dot-space) - calc(var(--dot-size) / 2));
