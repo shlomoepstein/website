@@ -8,18 +8,18 @@
 }
 
 body {
-   width: 2000px;
-   height: 2000px;
-   margin: -1000px 0px 0px -1000px;
+   width: 10000px;
+   height: 10000px;
+   margin: -5000px 0px 0px -5000px;
    scrollbar-width: none;
-   
+
    background:
       linear-gradient(90deg, var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
       linear-gradient(var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
       var(--dot-color);
 }
 
-body p {
+#id-1 {
    width: 500px;
    height: 500px;
    
