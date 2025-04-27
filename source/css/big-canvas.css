@@ -50,10 +50,10 @@ body {
       center /
       var(--dot-space)
       var(--dot-space)
-      no-repeat,
+      no-repeat/*,
 
       var(--dot-color)
-      no-repeat;
+      no-repeat;*/
 }
 
 #origin {
