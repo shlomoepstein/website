@@ -39,6 +39,7 @@ body {
       no-repeat,
 
       linear-gradient(
+         180deg,
          var(--dot-bg)
          calc(
             var(--dot-space) -
