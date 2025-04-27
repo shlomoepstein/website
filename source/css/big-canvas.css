@@ -63,11 +63,8 @@ body {
    width: 0;
    height: 0;
    position: absolute;
-   inset:
-      calc(50% - 50svh)
-      calc(50% - 50svw)
-      auto
-      auto;
+   inset-top: calc(50% - 50svh);
+   inset-left: calc(50% + 50svw);
 
    div {
       --size: calc(var(--dot-size) * 2);
@@ -76,11 +73,8 @@ body {
       width: var(--size);
       height: var(--size);
       position: absolute;
-      inset:
-         calc(50svh - var(--half-size))
-         calc(50svw - var(--half-size))
-         auto
-         auto;
+      inset-top: calc(50svh - var(--half-size));
+      inset-left: calc(var(--half-size) - 50svw);
 
       background-color: red;
    }
