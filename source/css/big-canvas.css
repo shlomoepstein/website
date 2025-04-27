@@ -26,8 +26,8 @@ body {
    width: 30px;
    height: 30px;
    position: absolute;
-/*   inset: calc(50% - 15px);*/
-   inset: 50%;
+   inset: calc(50% - 15px);
+/*   inset: 50%;*/
    border: 10px solid blue;
    border-radius: 15px;
    
