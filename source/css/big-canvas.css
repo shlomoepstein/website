@@ -60,16 +60,28 @@ body {
 }
 
 #origin {
-   --size: calc(var(--dot-size) * 2);
-
-   width: var(--size);
-   height: var(--size);
+   width: 0;
+   height: 0;
    position: absolute;
-   inset: calc(50% - var(--dot-size));
-   
-   margin:
-      calc((100svh - var(--size)) / 2)
-      calc((100svw - var(--size)) / 2);
+   inset:
+      calc(50% - 50svh)
+      calc(50% + 50svw)
+      auto
+      auto;
 
-   background-color: red;
+   div {
+      --size: var(--dot-size);
+      --half-size: calc(var(--size) / 2);
+
+      width: var(--size);
+      height: var(--size);
+      position: absolute;
+      inset:
+         calc(50svh - var(--half-size))
+         calc(var(--half-size) - 50svw)
+         auto
+         auto;
+
+      background-color: red;
+   }
 }
