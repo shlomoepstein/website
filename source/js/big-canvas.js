@@ -11,5 +11,5 @@ let jump_to_origin = () =>
      // (height / 2) - (vp_height / 2)
    0, 0);
 
-document.querySelector('#jump-to-origin').onClick = () =>
+document.querySelector('#jump-to-origin').onclick = () =>
    window.scrollTo(0, 0);
