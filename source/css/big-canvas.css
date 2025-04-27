@@ -20,7 +20,7 @@ body {
       var(--dot-color);
 }
 
-#id-1 {
+p {
    width: 1000px;
    height: 1000px;
    position: absolute;
