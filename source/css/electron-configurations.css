@@ -1,18 +1,15 @@
-/* Use a generic sans‐serif font throughout */
 body {
   font-family: system-ui, sans-serif;
   font-size: 0.9rem;
 }
 
-/* Base table styling and default left alignment */
 table {
   border-collapse: collapse;
-  margin: 0 auto; /* center horizontally */
-  width: auto;     /* shrink to content */
+  margin: 0 auto;
+  width: auto;
   text-align: left;
 }
 
-/* Common cell styling */
 th, td {
   border: 1px solid #000;
   padding: 0.35em 0.7em;
@@ -24,12 +21,11 @@ th {
   border-bottom-width: 2px;
 }
 
-/* Center Z and X columns */
 .centered {
   text-align: center;
 }
 
-/* Block coloring */
+/* block colors */
 tr.s {
   background-color: #FF9999;
 }
@@ -42,6 +38,7 @@ tr.d {
 tr.p {
   background-color: #FCFE8C;
 }
+/* noble gases almost got coffee */
 tr.n {
   background-color: #C0FFFF;
 }

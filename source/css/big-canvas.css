@@ -1,19 +1,93 @@
 :root {
    --dot-bg: #FFF3E3;
    --dot-color: #362B1E;
-   --dot-size: 1px;
-   --dot-space: 22px;
-   
+   --dot-size: 2px;
+   --dot-space: 50px;
+
+   --stop-1: calc(var(--dot-size) / 2);
+   --stop-2: calc(var(--dot-space) -
+                (var(--dot-size) / 2));
+
    font-family: system-ui, sans-serif;
 }
 
+* {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+}
+
 body {
-   width: 1000000px;
-   height: 1000000px;
-   scrollbar-width: none;
-   
+   width: 10000px;
+   height: 10000px;
+   position: absolute;
+
+   touch-action: manipulation;
+
    background:
-      linear-gradient(90deg, var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
-      linear-gradient(var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
-      var(--dot-color);
+      linear-gradient(
+         90deg,
+
+         transparent
+         var(--stop-1),
+
+         var(--dot-bg)
+         var(--stop-1)
+         var(--stop-2),
+
+         transparent
+         var(--stop-2)
+      )
+      top left /
+      var(--dot-space)
+      var(--dot-space),
+
+      linear-gradient(
+         180deg,
+         
+         var(--dot-color)
+         var(--stop-1),
+         
+         var(--dot-bg)
+         var(--stop-1)
+         var(--stop-2),
+
+         var(--dot-color)
+         var(--stop-2)
+      )
+      top left /
+      var(--dot-space)
+      var(--dot-space),
+
+      var(--dot-bg);
+}
+
+#origin {
+   --size: calc(var(--dot-size) * 2);
+   --size: 100px;
+   --half-size: calc(var(--size) / 2);
+
+   width: var(--size);
+   height: var(--size);
+   position: absolute;
+   top: calc(50% - var(--half-size));
+   left: calc(50% - var(--half-size));
+
+   background-color: red;
+}
+
+#nav {
+   position: fixed;
+   top: 0.3em;
+   right: 0.3em;
+   
+   display: flex;
+   gap: 0.3em;
+}
+
+.nav-button {
+   padding: 0.3em 0.4em 0.4em 0.5em;
+   border: 1px solid #999;
+   border-radius: 7px;
+   background-color: #EFE3D3;
 }
