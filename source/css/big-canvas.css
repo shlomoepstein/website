@@ -19,7 +19,7 @@ body {
       var(--dot-color);
 }
 
-#id-1 {
+#origin {
    width: 500px;
    height: 500px;
    position: absolute;
