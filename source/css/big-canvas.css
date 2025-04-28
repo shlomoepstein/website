@@ -21,7 +21,7 @@ body {
    height: 10000px;
    position: absolute;
 
-   touch-action: manipulation;
+/*   touch-action: manipulation;*/
 
    background:
       linear-gradient(
