@@ -42,8 +42,6 @@ window.addEventListener('load', () => {
    let origin = document
       .querySelector('#origin');
 
-   scrollTo(origin, 'instant');
-
    (async () => {
       await delay(0);
       scrollTo(origin, 'instant');
