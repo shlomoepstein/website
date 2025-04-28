@@ -44,4 +44,6 @@ window.addEventListener('load', () => {
       .querySelector('#jump-to-origin')
       .addEventListener('click', () =>
          scrollTo(origin, 'smooth'));
+
+   scrollTo(origin, 'instant');
 });
