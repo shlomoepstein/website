@@ -33,6 +33,10 @@ let scrollTo = (element, scrollBehavior) => {
    });
 };
 
+let delay = ms =>
+   new Promise(resolve =>
+      setTimeout(resolve, ms));
+
 
 window.addEventListener('load', () => {
    let origin = document
@@ -40,10 +44,13 @@ window.addEventListener('load', () => {
 
    scrollTo(origin, 'instant');
 
+   (async () => {
+      await delay(1000);
+      scrollTo(origin, 'instant');
+   })();
+
    document
       .querySelector('#jump-to-origin')
       .addEventListener('click', () =>
          scrollTo(origin, 'smooth'));
-
-   scrollTo(origin, 'instant');
 });
