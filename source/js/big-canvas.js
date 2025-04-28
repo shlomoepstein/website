@@ -1,24 +1,78 @@
-let body = document.querySelector('body');
+// from the global namespace:
+// scrollX, scrollY, innerWidth,
+// innerHeight
 
-let width = body.scrollWidth,
-    height = body.scrollHeight,
-    vp_width = window.innerWidth,
-    vp_height = window.innerHeight;
+// editing on a phone (textastic!),
+// hence the tight nesting
 
-window.addEventListener(
-   'load',
-   () => {
-      document.querySelector(
-         '#jump-to-origin'
-      ).addEventListener(
-         'click',
-         () => {
-            window.scrollTo({
-               top: (height / 2) - (vp_height / 2),
-               left: (width / 2) - (vp_width / 2),
-               behavior: 'smooth'
-            })
-         }
-      )
-   }
+
+let getCoords = element => {
+   let box = element.getBoundingClientRect();
+   return {
+      x: scrollX + box.x,
+      y: scrollY + box.y,
+      width: box.width,
+      height: box.height,
+      centerX: scrollX + box.x + (box.width / 2),
+      centerY: scrollY + box.y + (box.height / 2)
+   };
+};
+
+let scrollTo = (element, scrollBehavior) => {
+   let coords = getCoords(element);
+   let x = coords.centerX -
+              (innerWidth / 2),
+       y = coords.centerY -
+              (innerHeight / 2);
+   window.scrollTo({
+      top: y,
+      left: x,
+      behavior: scrollBehavior
+   });
+};
+
+
+window.addEventListener('load', () => {
+
+let origin = document
+   .querySelector('#origin');
+
+console.log(
+   origin.getBoundingClientRect());
+console.log(`\
+window.scrollX = ${scrollX}
+window.scrollY = ${scrollY}
+window.innerWidth = ${innerWidth}
+window.innerHeight = ${innerHeight}`
 );
+
+scrollTo(origin, 'instant');
+
+console.log(
+   origin.getBoundingClientRect());
+console.log(`\
+window.scrollX = ${scrollX}
+window.scrollY = ${scrollY}
+window.innerWidth = ${innerWidth}
+window.innerHeight = ${innerHeight}`
+);
+
+document
+   .querySelector('#jump-to-origin')
+   .addEventListener('click', () =>
+      scrollTo(origin, 'smooth'));
+
+document
+   .querySelector('#log-coords')
+   .addEventListener('click', () => {
+      console.log(
+         origin.getBoundingClientRect()
+      );
+      console.log(`\
+window.scrollX = ${scrollX}
+window.scrollY = ${scrollY}
+window.innerWidth = ${innerWidth}
+window.innerHeight = ${innerHeight}`
+      );
+   });
+});

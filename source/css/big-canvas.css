@@ -62,30 +62,25 @@ body {
 }
 
 #origin {
-   width: 0;
-   height: 0;
+   --size: calc(var(--dot-size) * 2);
+   --half-size: calc(var(--size) / 2);
+
+   width: var(--size);
+   height: var(--size);
    position: absolute;
-   top: calc(50% - 50svh);
-   left: calc(50% + 50svw);
+   top: calc(50% - var(--half-size));
+   left: calc(50% - var(--half-size));
 
-   div {
-      --size: calc(var(--dot-size) * 2);
-      --half-size: calc(var(--size) / 2);
-
-      width: var(--size);
-      height: var(--size);
-      position: absolute;
-      top: calc(50svh - var(--half-size));
-      left: calc(-50svw - var(--half-size));
-
-      background-color: red;
-   }
+   background-color: red;
 }
 
-#jump-to-origin {
+#nav {
    position: fixed;
    top: 0.3em;
    right: 0.3em;
+   
+   display: flex;
+   gap: 0.3em;
 }
 
 .nav-button {
