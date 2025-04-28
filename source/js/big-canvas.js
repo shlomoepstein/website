@@ -42,6 +42,11 @@ window.addEventListener('load', () => {
    let origin = document
       .querySelector('#origin');
 
+// fixes an issue where scrollTo gets
+// the wrong innerHeight initially. a
+// delay of no time seems to work, it
+// is kind of weird but life is weird
+// man
    (async () => {
       await delay(0);
       scrollTo(origin, 'instant');
