@@ -45,7 +45,7 @@ window.addEventListener('load', () => {
    scrollTo(origin, 'instant');
 
    (async () => {
-      await delay(10);
+      await delay(1);
       scrollTo(origin, 'instant');
    })();
 
