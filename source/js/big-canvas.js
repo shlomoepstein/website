@@ -1,59 +1,20 @@
-// from the global namespace:
-// scrollX, scrollY, innerWidth,
-// innerHeight
+let origin =
+   document.getElementById('origin');
+let instant = {
+   behavior: 'instant',
+   block: 'center',
+   inline: 'center' };
+let smooth = {
+   behavior: 'smooth',
+   block: 'center',
+   inline: 'center' };
 
-// editing on a phone (textastic!),
-// hence the tight nesting
+// after first layout and paint
+requestAnimationFrame(() =>
+   requestAnimationFrame(() =>
+      origin.scrollIntoView(instant)));
 
-
-let getCoords = element => {
-   let box = element.getBoundingClientRect();
-   return {
-      x: scrollX + box.x,
-      y: scrollY + box.y,
-      width: box.width,
-      height: box.height,
-      centerX: scrollX + box.x +
-               (box.width / 2),
-      centerY: scrollY + box.y +
-               (box.height / 2)
-   };
-};
-
-let scrollTo = (element, scrollBehavior) => {
-   let coords = getCoords(element);
-   let x = coords.centerX -
-           (innerWidth / 2),
-       y = coords.centerY -
-           (innerHeight / 2);
-   window.scrollTo({
-      top: y,
-      left: x,
-      behavior: scrollBehavior
-   });
-};
-
-let delay = ms =>
-   new Promise(resolve =>
-      setTimeout(resolve, ms));
-
-
-window.addEventListener('load', () => {
-   let origin = document
-      .querySelector('#origin');
-
-// fixes an issue where scrollTo gets
-// the wrong innerHeight initially. a
-// delay of no time seems to work, it
-// is kind of weird but life is weird
-// man
-   (async () => {
-      await delay(0);
-      scrollTo(origin, 'instant');
-   })();
-
-   document
-      .querySelector('#jump-to-origin')
-      .addEventListener('click', () =>
-         scrollTo(origin, 'smooth'));
-});
+document
+   .querySelector('#jump-to-origin')
+   .addEventListener('click', () =>
+      origin.scrollIntoView(smooth));
