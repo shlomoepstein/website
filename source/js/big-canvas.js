@@ -15,8 +15,13 @@ let before = visualViewport.height;
 
 // after first layout and paint
 requestAnimationFrame(() =>
-   requestAnimationFrame(() =>
-      origin.scrollIntoView(instant)));
+   requestAnimationFrame(() => {
+      alert(
+         `${visualViewPort.height}`
+      );
+      origin.scrollIntoView(instant);
+   })
+);
 
 let after = visualViewport.height;
 alert(`${before}\n${after}`)
