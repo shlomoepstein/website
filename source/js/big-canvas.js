@@ -35,6 +35,7 @@ document
       origin.scrollIntoView(smooth);
       alert(`\
 visualViewport.height: ${visualViewport.height}
-window.innerHeight: ${innerHeight}`
+window.innerHeight: ${innerHeight}
+${inside}`
       );
    });
