@@ -24,6 +24,7 @@ visualViewport.height: ${visualViewport.height}
 window.innerHeight: ${innerHeight}`
 
       origin.scrollIntoView(instant);
+      origin.scrollIntoView(instant);
    })
 );
 
