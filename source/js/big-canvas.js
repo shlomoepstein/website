@@ -11,26 +11,30 @@ let smooth = {
    inline: 'center'
 };
 
-let before = visualViewport.height;
+let before = `\
+visualViewport.height: ${visualViewport.height}
+window.innerHeight: ${innerHeight}`;
+let inside = 'inside';
 
 // after first layout and paint
 requestAnimationFrame(() =>
    requestAnimationFrame(() => {
-      alert(
-         `${visualViewPort.height}`
-      );
+      inside = `\
+visualViewport.height: ${visualViewport.height}
+window.innerHeight: ${innerHeight}`
+
       origin.scrollIntoView(instant);
    })
 );
 
-let after = visualViewport.height;
-alert(`${before}\n${after}`)
+alert(`${before}\n${inside}`);
 
 document
    .querySelector('#jump-to-origin')
    .addEventListener('click', () => {
       origin.scrollIntoView(smooth);
-      alert(
-         `${visualViewport.height}`
+      alert(`\
+visualViewport.height: ${visualViewport.height}
+window.innerHeight: ${innerHeight}`
       );
    });
