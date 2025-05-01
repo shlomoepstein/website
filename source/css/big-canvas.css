@@ -27,14 +27,14 @@ body {
       linear-gradient(
          90deg,
 
-         var(--dot-color)
+         transparent
          var(--stop-1),
 
          var(--dot-bg)
          var(--stop-1)
          var(--stop-2),
 
-         var(--dot-color)
+         transparent
          var(--stop-2)
       )
       top left /
@@ -58,7 +58,7 @@ body {
       var(--dot-space)
       var(--dot-space),
 
-      var(--dot-color);
+      var(--dot-bg);
 }
 
 #origin {
