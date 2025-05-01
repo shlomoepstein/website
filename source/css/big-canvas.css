@@ -27,14 +27,14 @@ body {
       linear-gradient(
          90deg,
 
-         var(--dot-bg)
+         var(--dot-color)
          var(--stop-1),
 
          var(--dot-bg)
          var(--stop-1)
          var(--stop-2),
 
-         var(--dot-bg)
+         var(--dot-color)
          var(--stop-2)
       )
       top left /
