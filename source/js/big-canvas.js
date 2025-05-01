@@ -16,7 +16,7 @@ let delay = ms =>
 
 
 (async () => {
-   await delay(0);
+   await delay(10);
    requestAnimationFrame(() =>
       requestAnimationFrame(() =>
          origin.scrollIntoView(instant)));
