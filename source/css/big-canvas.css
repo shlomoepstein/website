@@ -22,7 +22,7 @@ body {
    height: 10000px;
    position: absolute;
 
-   touch-action: manipulation;
+   touch-action: pinch-zoom;
 
    background:
       linear-gradient(
