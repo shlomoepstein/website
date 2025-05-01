@@ -18,8 +18,8 @@ let delay = ms =>
 (async () => {
    await delay(10);
    // requestAnimationFrame(() =>
-   //    requestAnimationFrame(() =>
-         origin.scrollIntoView(instant);
+      requestAnimationFrame(() =>
+         origin.scrollIntoView(instant));
 })();
 
 document.querySelector('#jump-to-origin')
