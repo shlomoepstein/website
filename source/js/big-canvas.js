@@ -33,6 +33,6 @@ document.querySelector('#jump-to-origin')
 
 document.addEventListener('dblclick',(e) => {
       e.preventDefault();
-      e.stopPropagation();
+//      e.stopPropagation();
    },
    true);
