@@ -5,7 +5,8 @@
    --dot-space: 50px;
 
    --stop-1: calc(var(--dot-size) / 2);
-   --stop-2: calc(var(--dot-space) - (var(--dot-size) / 2));
+   --stop-2: calc(var(--dot-space) -
+                (var(--dot-size) / 2));
 
    font-family: system-ui, sans-serif;
 }

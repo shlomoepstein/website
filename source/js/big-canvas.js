@@ -1,5 +1,4 @@
-let origin =
-   document.getElementById('origin');
+let origin = document.getElementById('origin');
 let instant = {
    behavior: 'instant',
    block: 'center',
@@ -15,9 +14,7 @@ let smooth = {
 window.addEventListener('load', () =>
    requestAnimationFrame(() =>
       requestAnimationFrame(() =>
-         origin
-            .scrollIntoView(instant))));
-
+         origin.scrollIntoView(instant))));
 
 document
    .querySelector('#jump-to-origin')
