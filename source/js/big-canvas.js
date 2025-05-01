@@ -17,9 +17,9 @@ let delay = ms =>
 
 (async () => {
    await delay(10);
-   // requestAnimationFrame(() =>
+   requestAnimationFrame(() =>
       requestAnimationFrame(() =>
-         origin.scrollIntoView(instant));
+         origin.scrollIntoView(instant)));
 })();
 
 document.querySelector('#jump-to-origin')
