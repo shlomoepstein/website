@@ -17,15 +17,10 @@ let delay = ms =>
 
 (async () => {
    await delay(10);
-   requestAnimationFrame(() =>
-      requestAnimationFrame(() =>
-         origin.scrollIntoView(instant)));
+   // requestAnimationFrame(() =>
+   //    requestAnimationFrame(() =>
+         origin.scrollIntoView(instant);
 })();
-
-// window.addEventListener('load', () =>
-//    requestAnimationFrame(() =>
-//       requestAnimationFrame(() =>
-//          origin.scrollIntoView(instant))));
 
 document.querySelector('#jump-to-origin')
         .addEventListener('click', () =>
