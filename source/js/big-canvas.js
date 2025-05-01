@@ -10,13 +10,21 @@ let smooth = {
    inline: 'center'
 };
 
+let delay = ms =>
+   new Promise(resolve =>
+      setTimeout(resolve, ms));
 
-window.addEventListener('load', () =>
-   requestAnimationFrame(() =>
-      requestAnimationFrame(() =>
-         origin.scrollIntoView(instant))));
 
-document
-   .querySelector('#jump-to-origin')
-   .addEventListener('click', () =>
-      origin.scrollIntoView(smooth));
+(async () => {
+   await delay(0);
+   origin.scrollIntoView(instant);
+})();
+
+// window.addEventListener('load', () =>
+//    requestAnimationFrame(() =>
+//       requestAnimationFrame(() =>
+//          origin.scrollIntoView(instant))));
+
+document.querySelector('#jump-to-origin')
+        .addEventListener('click', () =>
+           origin.scrollIntoView(smooth));

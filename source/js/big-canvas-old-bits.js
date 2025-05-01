@@ -29,8 +29,8 @@ let delay = ms =>
    new Promise(resolve =>
       setTimeout(resolve, ms));
 
-   (async () => {
-      await delay(0);
-      scrollTo(origin, 'instant');
-   })();
+(async () => {
+   await delay(0);
+   scrollTo(origin, 'instant');
+})();
 
