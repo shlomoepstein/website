@@ -20,10 +20,10 @@ let smooth = {
 //    origin.scrollIntoView(instant);
 // })();
 
-window.addEventListener('load', () =>
+//window.addEventListener('load', () =>
    requestAnimationFrame(() =>
       requestAnimationFrame(() =>
-         origin.scrollIntoView(instant))));
+         origin.scrollIntoView(instant)));
 
 document.querySelector('#jump-to-origin')
         .addEventListener('click', () =>
