@@ -12,13 +12,11 @@ let smooth = {
 };
 
 
-// after first layout and paint
-requestAnimationFrame(() =>
-   requestAnimationFrame(() => {
-      origin.scrollIntoView(instant);
-      origin.scrollIntoView(instant);
-   })
-);
+window.addEventListener('load', () =>
+   requestAnimationFrame(() =>
+      requestAnimationFrame(() =>
+         origin
+            .scrollIntoView(instant))));
 
 
 document
