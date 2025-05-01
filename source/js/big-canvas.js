@@ -30,3 +30,8 @@ let delay = ms =>
 document.querySelector('#jump-to-origin')
         .addEventListener('click', () =>
            origin.scrollIntoView(smooth));
+
+document.addEventListener(
+   'dblclick',
+   (e) => e.stopPropagation,
+   true);
