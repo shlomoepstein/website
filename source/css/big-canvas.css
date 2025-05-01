@@ -64,6 +64,7 @@ body {
 
 #origin {
    --size: calc(var(--dot-size) * 2);
+   --size: 100px;
    --half-size: calc(var(--size) / 2);
 
    width: var(--size);
