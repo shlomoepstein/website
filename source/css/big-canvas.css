@@ -44,14 +44,14 @@ body {
       linear-gradient(
          180deg,
          
-         transparent
+         var(--dot-color)
          var(--stop-1),
          
          var(--dot-bg)
          var(--stop-1)
          var(--stop-2),
 
-         transparent
+         var(--dot-color)
          var(--stop-2)
       )
       top left /
