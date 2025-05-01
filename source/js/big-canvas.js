@@ -31,7 +31,8 @@ document.querySelector('#jump-to-origin')
         .addEventListener('click', () =>
            origin.scrollIntoView(smooth));
 
-document.addEventListener(
-   'dblclick',
-   (e) => e.stopPropagation,
+document.addEventListener('dblclick',(e) => {
+      e.preventDefault();
+      e.stopPropagation();
+   },
    true);
