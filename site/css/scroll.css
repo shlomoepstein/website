@@ -17,12 +17,20 @@
    padding: 0;
 }
 
-body {
+#viewport {
+   width: 100vw;
+   height: 100vh;
+   
+   overflow: hidden;
+   touch-action: none;
+}
+
+#canvas {
    width: 10000px;
    height: 10000px;
-   position: absolute;
 
-   touch-action: manipulation;
+   position: absolute;
+   will-change: transform;
 
    background:
       linear-gradient(
@@ -64,7 +72,7 @@ body {
 
 #origin {
    --size: calc(var(--dot-size) * 2);
-   --size: 100px;
+   --size: 26px;
    --half-size: calc(var(--size) / 2);
 
    width: var(--size);
@@ -85,9 +93,19 @@ body {
    gap: 0.3em;
 }
 
-.nav-button {
-   padding: 0.3em 0.4em 0.4em 0.5em;
+.button {
+   padding: 0.3em 0.4em 0.4em 0.4em;
    border: 1px solid #999;
    border-radius: 7px;
    background-color: #EFE3D3;
+}
+
+#info {
+   position: fixed;
+   top: 0.3em;
+   left: 0.3em;
+}
+
+.transparent {
+   opacity: 0.75;
 }
