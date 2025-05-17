@@ -21,6 +21,12 @@ th {
   border-bottom-width: 2px;
 }
 
+/* remove default styling */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
 .centered {
   text-align: center;
 }
