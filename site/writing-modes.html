@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Writing Modes</title>
+   <link rel="stylesheet" href="css/writing-modes.css">
+</head>
+<body>
+   <div id="box-container">
+      <div id="box-1" class="box">
+         <p>
+            <span class="code">horizontal-tb</span>
+         </p>
+         <p>
+            The <span class="code">writing-mode</span> property specifies the block flow direction, which determines the ordering direction of block-level boxes in a block formatting context; the ordering direction of line boxes in a block container that contains inlines; the ordering direction of rows in a table; etc. By virtue of determining the stacking direction of line boxes, the <span class="code">writing-mode</span> property also determines whether the line boxes' orientation (and thus the writing mode) is horizontal or vertical. The <span class="code">text-orientation</span> property then determines how text is laid out within the line box.
+         </p>
+         <p>
+            <span class="code">writing-mode</span> 属性指定块的流向，它决定了块格式化上下文中块级框的排序方向；包含内联元素的块容器中行框的排序方向；表格中行的排序方向等等。通过确定行框的堆叠方向，<span class="code">writing-mode</span> 属性还决定了行框的方向（以及书写模式）是水平还是垂直。<span class="code">text-orientation</span> 属性则决定了文本在行框内的布局方式。
+         </p>
+         <p>
+            A baseline is a line along the inline axis of a line box along which individual glyphs of text are aligned. Baselines guide the design of glyphs in a font (for example, the bottom of most alphabetic glyphs typically align with the alphabetic baseline), and they guide the alignment of glyphs from different fonts or font sizes when typesetting.
+         </p>
+         <p>
+            基线是沿着行框内联轴的一条线，文本中的各个字形沿着这条线对齐。基线指导字体中字形的设计（例如，大多数字母字形的底部通常与字母基线对齐），并且在排版时指导不同字体或字体大小的字形的对齐。
+         </p>
+         <p>
+            我喜欢大屁股，而且我不会撒谎
+         </p>
+      </div>
+      <div id="box-2_1" class="box">
+         <p>
+            <span class="code">writing-mode: vertical-rl</span><br>
+            <span class="code">text-orientation: mixed</span>
+         </p>
+         <p>
+            The <span class="code">writing-mode</span> property specifies the block flow direction, which determines the ordering direction of block-level boxes in a block formatting context; the ordering direction of line boxes in a block container that contains inlines; the ordering direction of rows in a table; etc. By virtue of determining the stacking direction of line boxes, the <span class="code">writing-mode</span> property also determines whether the line boxes' orientation (and thus the writing mode) is horizontal or vertical. The <span class="code">text-orientation</span> property then determines how text is laid out within the line box.
+         </p>
+         <p>
+            <span class="code">writing-mode</span> 属性指定块的流向，它决定了块格式化上下文中块级框的排序方向；包含内联元素的块容器中行框的排序方向；表格中行的排序方向等等。通过确定行框的堆叠方向，<span class="code">writing-mode</span> 属性还决定了行框的方向（以及书写模式）是水平还是垂直。<span class="code">text-orientation</span> 属性则决定了文本在行框内的布局方式。
+         </p>
+         <p>
+            A baseline is a line along the inline axis of a line box along which individual glyphs of text are aligned. Baselines guide the design of glyphs in a font (for example, the bottom of most alphabetic glyphs typically align with the alphabetic baseline), and they guide the alignment of glyphs from different fonts or font sizes when typesetting.
+         </p>
+         <p>
+            基线是沿着行框内联轴的一条线，文本中的各个字形沿着这条线对齐。基线指导字体中字形的设计（例如，大多数字母字形的底部通常与字母基线对齐），并且在排版时指导不同字体或字体大小的字形的对齐。
+         </p>
+         <p>
+            我喜欢大屁股，而且我不会撒谎
+         </p>
+      </div>
+      <div id="box-2_2" class="box">
+         <p>
+            <span class="code">writing-mode: vertical-rl</span><br>
+            <span class="code">text-orientation: upright</span> (in mixed blocks)
+         </p>
+         <p>
+            The <span class="code">writing-mode</span> property specifies the block flow direction, which determines the ordering direction of block-level boxes in a block formatting context; the ordering direction of line boxes in a block container that contains inlines; the ordering direction of rows in a table; etc. By virtue of determining the stacking direction of line boxes, the <span class="code">writing-mode</span> property also determines whether the line boxes' orientation (and thus the writing mode) is horizontal or vertical. The <span class="code">text-orientation</span> property then determines how text is laid out within the line box.
+         </p>
+         <p class="mixed-script">
+            <span class="code">writing-mode</span> 属性指定块的流向，它决定了块格式化上下文中块级框的排序方向；包含内联元素的块容器中行框的排序方向；表格中行的排序方向等等。通过确定行框的堆叠方向，<span class="code">writing-mode</span> 属性还决定了行框的方向（以及书写模式）是水平还是垂直。<span class="code">text-orientation</span> 属性则决定了文本在行框内的布局方式。
+         </p>
+         <p>
+            A baseline is a line along the inline axis of a line box along which individual glyphs of text are aligned. Baselines guide the design of glyphs in a font (for example, the bottom of most alphabetic glyphs typically align with the alphabetic baseline), and they guide the alignment of glyphs from different fonts or font sizes when typesetting.
+         </p>
+         <p>
+            基线是沿着行框内联轴的一条线，文本中的各个字形沿着这条线对齐。基线指导字体中字形的设计（例如，大多数字母字形的底部通常与字母基线对齐），并且在排版时指导不同字体或字体大小的字形的对齐。
+         </p>
+         <p>
+            我喜欢大屁股，而且我不会撒谎
+         </p>
+      </div>
+      <div id="box-2_3" class="box">
+         <p>
+            <span class="code">writing mode: vertical-rl</span><br>
+            <span class="code">text-orientation: sideways</span>
+         </p>
+         <p>
+            The <span class="code">writing-mode</span> property specifies the block flow direction, which determines the ordering direction of block-level boxes in a block formatting context; the ordering direction of line boxes in a block container that contains inlines; the ordering direction of rows in a table; etc. By virtue of determining the stacking direction of line boxes, the <span class="code">writing-mode</span> property also determines whether the line boxes' orientation (and thus the writing mode) is horizontal or vertical. The <span class="code">text-orientation</span> property then determines how text is laid out within the line box.
+         </p>
+         <p>
+            <span class="code">writing-mode</span> 属性指定块的流向，它决定了块格式化上下文中块级框的排序方向；包含内联元素的块容器中行框的排序方向；表格中行的排序方向等等。通过确定行框的堆叠方向，<span class="code">writing-mode</span> 属性还决定了行框的方向（以及书写模式）是水平还是垂直。<span class="code">text-orientation</span> 属性则决定了文本在行框内的布局方式。
+         </p>
+         <p>
+            A baseline is a line along the inline axis of a line box along which individual glyphs of text are aligned. Baselines guide the design of glyphs in a font (for example, the bottom of most alphabetic glyphs typically align with the alphabetic baseline), and they guide the alignment of glyphs from different fonts or font sizes when typesetting.
+         </p>
+         <p>
+            基线是沿着行框内联轴的一条线，文本中的各个字形沿着这条线对齐。基线指导字体中字形的设计（例如，大多数字母字形的底部通常与字母基线对齐），并且在排版时指导不同字体或字体大小的字形的对齐。
+         </p>
+         <p>
+            我喜欢大屁股，而且我不会撒谎
+         </p>
+      </div>
+      <div id="box-3_1" class="box">
+         <p>
+            <span class="code">vertical-lr</span><br>
+            <span class="code">text-orientation: mixed</span>
+         </p>
+         <p>
+            The <span class="code">writing-mode</span> property specifies the block flow direction, which determines the ordering direction of block-level boxes in a block formatting context; the ordering direction of line boxes in a block container that contains inlines; the ordering direction of rows in a table; etc. By virtue of determining the stacking direction of line boxes, the <span class="code">writing-mode</span> property also determines whether the line boxes' orientation (and thus the writing mode) is horizontal or vertical. The <span class="code">text-orientation</span> property then determines how text is laid out within the line box.
+         </p>
+         <p>
+            <span class="code">writing-mode</span> 属性指定块的流向，它决定了块格式化上下文中块级框的排序方向；包含内联元素的块容器中行框的排序方向；表格中行的排序方向等等。通过确定行框的堆叠方向，<span class="code">writing-mode</span> 属性还决定了行框的方向（以及书写模式）是水平还是垂直。<span class="code">text-orientation</span> 属性则决定了文本在行框内的布局方式。
+         </p>
+         <p>
+            A baseline is a line along the inline axis of a line box along which individual glyphs of text are aligned. Baselines guide the design of glyphs in a font (for example, the bottom of most alphabetic glyphs typically align with the alphabetic baseline), and they guide the alignment of glyphs from different fonts or font sizes when typesetting.
+         </p>
+         <p>
+            基线是沿着行框内联轴的一条线，文本中的各个字形沿着这条线对齐。基线指导字体中字形的设计（例如，大多数字母字形的底部通常与字母基线对齐），并且在排版时指导不同字体或字体大小的字形的对齐。
+         </p>
+         <p>
+            我喜欢大屁股，而且我不会撒谎
+         </p>
+      </div>
+      <div id="box-3_2" class="box">
+         <p>
+            <span class="code">vertical-lr</span><br>
+            <span class="code">text-orientation: upright</span> (in mixed blocks)
+         </p>
+         <p>
+            The <span class="code">writing-mode</span> property specifies the block flow direction, which determines the ordering direction of block-level boxes in a block formatting context; the ordering direction of line boxes in a block container that contains inlines; the ordering direction of rows in a table; etc. By virtue of determining the stacking direction of line boxes, the <span class="code">writing-mode</span> property also determines whether the line boxes' orientation (and thus the writing mode) is horizontal or vertical. The <span class="code">text-orientation</span> property then determines how text is laid out within the line box.
+         </p>
+         <p class="mixed-script">
+            <span class="code">writing-mode</span> 属性指定块的流向，它决定了块格式化上下文中块级框的排序方向；包含内联元素的块容器中行框的排序方向；表格中行的排序方向等等。通过确定行框的堆叠方向，<span class="code">writing-mode</span> 属性还决定了行框的方向（以及书写模式）是水平还是垂直。<span class="code">text-orientation</span> 属性则决定了文本在行框内的布局方式。
+         </p>
+         <p>
+            A baseline is a line along the inline axis of a line box along which individual glyphs of text are aligned. Baselines guide the design of glyphs in a font (for example, the bottom of most alphabetic glyphs typically align with the alphabetic baseline), and they guide the alignment of glyphs from different fonts or font sizes when typesetting.
+         </p>
+         <p>
+            基线是沿着行框内联轴的一条线，文本中的各个字形沿着这条线对齐。基线指导字体中字形的设计（例如，大多数字母字形的底部通常与字母基线对齐），并且在排版时指导不同字体或字体大小的字形的对齐。
+         </p>
+         <p>
+            我喜欢大屁股，而且我不会撒谎
+         </p>
+      </div>
+      <div id="box-3_3" class="box">
+         <p>
+            <span class="code">vertical-lr</span><br>
+            <span class="code">text-orientation: sideways</span>
+         </p>
+         <p>
+            The <span class="code">writing-mode</span> property specifies the block flow direction, which determines the ordering direction of block-level boxes in a block formatting context; the ordering direction of line boxes in a block container that contains inlines; the ordering direction of rows in a table; etc. By virtue of determining the stacking direction of line boxes, the <span class="code">writing-mode</span> property also determines whether the line boxes' orientation (and thus the writing mode) is horizontal or vertical. The <span class="code">text-orientation</span> property then determines how text is laid out within the line box.
+         </p>
+         <p>
+            <span class="code">writing-mode</span> 属性指定块的流向，它决定了块格式化上下文中块级框的排序方向；包含内联元素的块容器中行框的排序方向；表格中行的排序方向等等。通过确定行框的堆叠方向，<span class="code">writing-mode</span> 属性还决定了行框的方向（以及书写模式）是水平还是垂直。<span class="code">text-orientation</span> 属性则决定了文本在行框内的布局方式。
+         </p>
+         <p>
+            A baseline is a line along the inline axis of a line box along which individual glyphs of text are aligned. Baselines guide the design of glyphs in a font (for example, the bottom of most alphabetic glyphs typically align with the alphabetic baseline), and they guide the alignment of glyphs from different fonts or font sizes when typesetting.
+         </p>
+         <p>
+            基线是沿着行框内联轴的一条线，文本中的各个字形沿着这条线对齐。基线指导字体中字形的设计（例如，大多数字母字形的底部通常与字母基线对齐），并且在排版时指导不同字体或字体大小的字形的对齐。
+         </p>
+         <p>
+            我喜欢大屁股，而且我不会撒谎
+         </p>
+      </div>
+      <div id="box-4" class="box">
+         <p>
+            <span class="code">sideways-rl</span>
+         </p>
+         <p>
+            The <span class="code">writing-mode</span> property specifies the block flow direction, which determines the ordering direction of block-level boxes in a block formatting context; the ordering direction of line boxes in a block container that contains inlines; the ordering direction of rows in a table; etc. By virtue of determining the stacking direction of line boxes, the <span class="code">writing-mode</span> property also determines whether the line boxes' orientation (and thus the writing mode) is horizontal or vertical. The <span class="code">text-orientation</span> property then determines how text is laid out within the line box.
+         </p>
+         <p>
+            <span class="code">writing-mode</span> 属性指定块的流向，它决定了块格式化上下文中块级框的排序方向；包含内联元素的块容器中行框的排序方向；表格中行的排序方向等等。通过确定行框的堆叠方向，<span class="code">writing-mode</span> 属性还决定了行框的方向（以及书写模式）是水平还是垂直。<span class="code">text-orientation</span> 属性则决定了文本在行框内的布局方式。
+         </p>
+         <p>
+            A baseline is a line along the inline axis of a line box along which individual glyphs of text are aligned. Baselines guide the design of glyphs in a font (for example, the bottom of most alphabetic glyphs typically align with the alphabetic baseline), and they guide the alignment of glyphs from different fonts or font sizes when typesetting.
+         </p>
+         <p>
+            基线是沿着行框内联轴的一条线，文本中的各个字形沿着这条线对齐。基线指导字体中字形的设计（例如，大多数字母字形的底部通常与字母基线对齐），并且在排版时指导不同字体或字体大小的字形的对齐。
+         </p>
+         <p>
+            我喜欢大屁股，而且我不会撒谎
+         </p>
+      </div>
+      <div id="box-5" class="box">
+         <p>
+            <span class="code">sideways-lr</span>
+         </p>
+         <p>
+            The <span class="code">writing-mode</span> property specifies the block flow direction, which determines the ordering direction of block-level boxes in a block formatting context; the ordering direction of line boxes in a block container that contains inlines; the ordering direction of rows in a table; etc. By virtue of determining the stacking direction of line boxes, the <span class="code">writing-mode</span> property also determines whether the line boxes' orientation (and thus the writing mode) is horizontal or vertical. The <span class="code">text-orientation</span> property then determines how text is laid out within the line box.
+         </p>
+         <p>
+            <span class="code">writing-mode</span> 属性指定块的流向，它决定了块格式化上下文中块级框的排序方向；包含内联元素的块容器中行框的排序方向；表格中行的排序方向等等。通过确定行框的堆叠方向，<span class="code">writing-mode</span> 属性还决定了行框的方向（以及书写模式）是水平还是垂直。<span class="code">text-orientation</span> 属性则决定了文本在行框内的布局方式。
+         </p>
+         <p>
+            A baseline is a line along the inline axis of a line box along which individual glyphs of text are aligned. Baselines guide the design of glyphs in a font (for example, the bottom of most alphabetic glyphs typically align with the alphabetic baseline), and they guide the alignment of glyphs from different fonts or font sizes when typesetting.
+         </p>
+         <p>
+            基线是沿着行框内联轴的一条线，文本中的各个字形沿着这条线对齐。基线指导字体中字形的设计（例如，大多数字母字形的底部通常与字母基线对齐），并且在排版时指导不同字体或字体大小的字形的对齐。
+         </p>
+         <p>
+            我喜欢大屁股，而且我不会撒谎
+         </p>
+      </div>
+   </div>
+</body>
+</html>
