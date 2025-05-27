@@ -52,6 +52,10 @@ p + p {
       text-orientation: upright;
       letter-spacing: calc(1cap - 1em);
       padding-inline: 0em 0.37em;
+
+      &.rtl {
+         letter-spacing: 0;
+      }
    }
 }
 
@@ -72,6 +76,10 @@ p + p {
       text-orientation: upright;
       letter-spacing: calc(1cap - 1em);
       padding-inline: 0em 0.37em;
+
+      &.rtl {
+         letter-spacing: 0;
+      }
    }
 }
 
