@@ -1,0 +1,89 @@
+* {
+   box-sizing: border-box;
+   margin: 0;
+}
+
+body {
+   font: 18px ui-sans-serif, sans-serif;
+   background-color: oklch(0.945 0.027 285);
+}
+
+p + p {
+   margin-block-start: 1em;
+}
+
+.code {
+   font: 17px ui-monospace, monospace;
+   padding-inline: 0.185em;
+   border-radius: 0.35em;
+   background-color: oklch(0.91 0.027 285);
+}
+
+#box-container {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   padding: 3px;
+   gap: 3px;
+}
+
+.box {
+   width: 100%;
+   max-width: 500px;
+   aspect-ratio: 1;
+   outline: 3px solid oklch(0.7 0.027 285);
+   padding: 1em;
+   overflow: scroll;
+}
+
+#box-1 {
+   writing-mode: horizontal-tb;
+}
+
+#box-2_1 {
+   writing-mode: vertical-rl;
+   text-orientation: mixed;
+}
+
+#box-2_2 {
+   writing-mode: vertical-rl;
+
+   .mixed-script .code {
+      text-orientation: upright;
+      letter-spacing: calc(1cap - 1em);
+      padding-inline: 0em 0.37em;
+   }
+}
+
+#box-2_3 {
+   writing-mode: vertical-rl;
+   text-orientation: sideways;
+}
+
+#box-3_1 {
+   writing-mode: vertical-lr;
+   text-orientation: mixed;
+}
+
+#box-3_2 {
+   writing-mode: vertical-lr;
+
+   .mixed-script .code {
+      text-orientation: upright;
+      letter-spacing: calc(1cap - 1em);
+      padding-inline: 0em 0.37em;
+   }
+}
+
+#box-3_3 {
+   writing-mode: vertical-lr;
+   text-orientation: sideways;
+}
+
+#box-4 {
+   writing-mode: sideways-rl;
+}
+
+#box-5 {
+   writing-mode: sideways-lr;
+}
