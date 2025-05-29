@@ -48,8 +48,8 @@ function isWin(row, col) {
 }
 
 function handleClick(event) {
-   row = event.target.dataset.row;
-   col = event.target.dataset.col;
+   row = Number(event.target.dataset.row);
+   col = Number(event.target.dataset.col);
 
    if (!board[row][col]) {
       board[row][col] = player;
