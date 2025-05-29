@@ -1,0 +1,40 @@
+* {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+}
+
+:root {
+   block-size: 100dvh;
+   inline-size: 100dvw;
+   touch-action: none;
+}
+
+#button-group {
+   position: fixed;
+   inset-block: 1em auto;
+   inset-inline: auto 1em;
+
+   display: flex;
+   flex-direction: column;
+   gap: 0.5em;
+}
+
+#borders-toggle-group {
+   position: fixed;
+   inset-block: auto 1em;
+   inset-inline: auto 1em;
+
+   font: 1em ui-sans-serif, sans-serif;
+}
+
+#output {
+   position: fixed;
+   inset-block: auto 1em;
+   inset-inline: 1em auto;
+   max-block-size: calc(100dvh - 2em);
+   max-inline-size: calc(50dvw - 1em);
+   overflow: scroll;
+
+   font: 1em ui-sans-serif, sans-serif;
+}
