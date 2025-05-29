@@ -69,6 +69,8 @@ function gameOver(player) {
                       ? `${player} wins!`
                       : 'Nobody wins 😐';
 
+   document.getElementById('new-game')
+      .style.visibility = 'visible';
    document.getElementById('board')
       .removeEventListener('click', handleClick);
 }
@@ -87,6 +89,8 @@ function newGame() {
    for (e of document.querySelectorAll('.square'))
       e.innerText = '';
    document.getElementById('game-status').innerText = '';
+   document.getElementById('new-game')
+      .style.visibility = 'hidden';
    document.getElementById('board')
       .addEventListener('click', handleClick);
 }
