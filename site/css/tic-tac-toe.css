@@ -97,13 +97,14 @@ body {
    text-align: center;
 }
 
-#bottom-chrome {
+#game-chrome-bottom {
    display: flex;
    padding: 0.5em;
 }
 
-#new-game {
+#new-game-button {
    margin-inline-start: auto;
+   visibility: hidden;
 }
 
 #button-group {
