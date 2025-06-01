@@ -1,6 +1,8 @@
 // JavaScript
 
-let divBy = divisor => number => number % divisor == 0;
+const divBy = divisor =>
+   number =>
+      number % divisor === 0;
 
 for (let i = 1; i <= 100; i++)
    console.log(
