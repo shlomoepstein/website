@@ -115,36 +115,60 @@ document.getElementById('game-chrome-bottom')
 
 
 
+
+
+
 // big mvc refactor yay
 
-// render
+// cached DOM nodes
 
-const squaresList = [...document.querySelectorAll('.square')];
+const squareList = [...document.querySelectorAll('.square')];
 const gameStatus = document.getElementById('game-status');
 const newGameButton = document.getElementById('new-game-button');
+const board = document.getElementById('board');
+
+const squares = Array.from(Array(3), () => Array(3));
+
+for (const square of squareList)
+   squares[square.dataset.row][square.dataset.col] = square;
 
 
-const render = ({board, winner}) => {
-   for (const square of squaresList)
-      square.textContent =
-         board[square.dataset.row][square.dataset.col]
-            ?? '';
+// view
 
-   gameStatus.textContent =
-      winner === 'draw'
-         ? 'It’s a draw'
-      : winner !== null
-         ? `${winner} wins!`
-      : '';
+const resetGame = () => {
+   for (const square of squareList)
+      square.textContent = '';
 
-   newGameButton.style.visibility =
-      winner === null
-         ? 'hidden'
-         : 'visible';
+   gameStatus.textContent = '';
+   newGameButton.style.visibility = 'hidden';
 };
 
 
-// reducer helpers
+const drawSquare = ({row, col, value}) =>
+   squares[row][col].textContent = value;
+
+
+const endGame = ({message}) => {
+   gameStatus.textContent = message;
+   newGameButton.style.visibility = 'visible';
+};
+
+
+const noop = () => {};
+
+
+const updates = {
+   'ui/reset_game': resetGame,
+   'ui/draw_square': drawSquare,
+   'ui/end_game': endGame
+};
+
+
+const render = update =>
+   (updates[update.type] ?? noop)(update);
+
+
+// model
 
 const isWin = (board, player, row, col) => {
    if (board[row].every(i => i === player))
@@ -161,8 +185,9 @@ const isWin = (board, player, row, col) => {
 };
 
 
-const applyBoardClick = (state, {row, col}) => {
-   const {board, currentPlayer, winner} = state;
+const boardClick = (state, action) => {
+   const {board, player, winner} = state;
+   const {row, col} = action;
 
    if (board[row][col] !== null
          || winner !== null)
@@ -173,75 +198,129 @@ const applyBoardClick = (state, {row, col}) => {
          i === row
             ? boardRow.map((cell, j) =>
                j === col
-                  ? currentPlayer
+                  ? player
                   : cell)
             : boardRow);
 
+   const nextPlayer =
+      player === 'X'
+         ? 'O'
+         : 'X';
+
    const nextWinner =
-      isWin(nextBoard, currentPlayer, row, col)
-         ? currentPlayer
+      isWin(nextBoard, player, row, col)
+         ? player
       : nextBoard.every(row => row.every(cell => cell !== null))
          ? 'draw'
       : null;
 
    return {
       board: nextBoard,
-      currentPlayer: currentPlayer === 'X' ? 'O' : 'X',
+      player: nextPlayer,
       winner: nextWinner
    };
 };
 
 
-const initialState = {
+const newGame = (_state, _action) => ({
    board: Array.from(Array(3), () => Array(3).fill(null)),
-   currentPlayer: 'X',
+   player: 'X',
    winner: null
-};
-
-
-const startNewGame = () => ({
-   ...initialState
 });
 
 
-// main reducer
+const defaultReducer = (state, _action) =>
+   state;
+
+
+const reducers = {
+   'app/board_click': boardClick,
+   'app/new_game': newGame
+};
 
 const reduce = (state, action) =>
-   action.type === 'BOARD_CLICK'
-      ? applyBoardClick(state, action)
-   : action.type === 'NEW_GAME'
-      ? startNewGame()
-   : state;
+   (reducers[action.type] ?? defaultReducer)(state, action);
 
 
 // controller
+
+const getUpdates = (prevState, state, action) => {
+   const {board: prevBoard} = prevState ?? {};
+   const {board, winner} = state;
+
+   const updates = [];
+
+   if (prevState === state)
+      return updates;
+
+   if (action.type === 'app/new_game') {
+      updates.push({
+         type: 'ui/reset_game'
+      });
+
+      return updates;
+   }
+
+   let row = 0;
+   let col = 0;
+
+   while (prevBoard[row] === board[row])
+      row++;
+
+   while (prevBoard[row][col] === board[row][col])
+      col++;
+
+   updates.push({
+      type: 'ui/draw_square',
+      row,
+      col,
+      value: board[row][col]
+   });
+
+   if (winner !== null) {
+      const message =
+         winner === 'draw'
+            ? 'It’s a draw.'
+            : `${winner} wins!`;
+
+      updates.push({
+         type: 'ui/end_game',
+         message
+      });
+   }
+
+   return updates;
+};
 
 const dispatch = (() => {
    let state = null;
 
    return action => {
+      const prevState = state;
       state = reduce(state, action);
-      render(state);
+
+      for (const update of getUpdates(prevState, state, action))
+         render(update);
    };
 })();
 
 
-// initialize before registering event handlers
+// initialization and event handlers
 
-dispatch({type: 'NEW_GAME'});
-
-
-// event listeners/event handlers
-
-document.getElementById('board')
-   .addEventListener('click', event =>
-      dispatch({
-         type: 'BOARD_CLICK',
-         row: Number(event.target.dataset.row),
-         col: Number(event.target.dataset.col)
-      }));
+dispatch({
+   type: 'app/new_game'
+});
 
 
-document.getElementById('new-game-button')
-   .addEventListener('click', () =>
-      dispatch({type: 'NEW_GAME'}));
+board.addEventListener('click', event =>
+   dispatch({
+      type: 'app/board_click',
+      row: Number(event.target.dataset.row),
+      col: Number(event.target.dataset.col)
+   }));
+
+
+newGameButton.addEventListener('click', () =>
+   dispatch({
+      type: 'app/new_game'
+   }));
