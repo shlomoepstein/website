@@ -52,18 +52,15 @@
 
 <body>
    <div class="frame" id="frame">
-      <!-- Replace src, OR pass ?video=https://example.com/clip.mp4 -->
       <video id="vid"
              src="purim.mp4"
              playsinline
-             muted
+             <!-- muted -->
              loop
-             autoplay
-             controls>
+             autoplay>
+             <!-- controls> -->
       </video>
    </div>
-
-   <div class="hint">Tap/click to toggle fullscreen (if supported)</div>
 
    <script>
       const vid = document.getElementById('vid');
