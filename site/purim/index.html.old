@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+   <meta charset="utf-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+   <title>Fullscreen Image</title>
+
+   <style>
+      html, body {
+         margin: 0;
+         height: 100%;
+         background: #000;
+      }
+
+      /* Full-viewport frame (handles notches via safe-area padding) */
+      .frame {
+         position: fixed;
+         inset: 0;
+         padding-top: env(safe-area-inset-top);
+         padding-right: env(safe-area-inset-right);
+         padding-bottom: env(safe-area-inset-bottom);
+         padding-left: env(safe-area-inset-left);
+
+         display: flex;
+         align-items: center;
+         justify-content: center;
+
+         background: #000;
+         overflow: hidden;
+         touch-action: manipulation;
+      }
+
+      /* The key: preserve aspect ratio and never distort */
+      img {
+         width: 100%;
+         height: 100%;
+         object-fit: contain;     /* no distortion, no cropping */
+         object-position: center;
+         user-select: none;
+         -webkit-user-drag: none;
+         image-orientation: from-image; /* respects EXIF rotation where supported */
+      }
+
+      /* Optional: a tiny hint */
+      .hint {
+         position: fixed;
+         left: 12px;
+         bottom: 12px;
+         font: 14px/1.2 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+         color: rgba(255,255,255,0.75);
+         background: rgba(0,0,0,0.35);
+         padding: 8px 10px;
+         border-radius: 10px;
+      }
+   </style>
+</head>
+
+<body>
+   <div class="frame" id="frame">
+      <img id="hero" src="purim.jpg" alt="" />
+   </div>
+
+   <script>
+      const img = document.getElementById('hero');
+      const frame = document.getElementById('frame');
+
+      // Allow: index.html?img=URL_ENCODED_IMAGE_URL
+      const params = new URLSearchParams(location.search);
+      const url = params.get('img');
+      if (url) img.src = url;
+
+      // Fullscreen toggle (note: iOS Safari is limited here)
+      async function toggleFullscreen() {
+         const root = document.documentElement;
+
+         try {
+            if (!document.fullscreenElement && root.requestFullscreen) {
+               await root.requestFullscreen();
+            } else if (document.fullscreenElement && document.exitFullscreen) {
+               await document.exitFullscreen();
+            }
+         } catch {
+            // Some browsers block fullscreen unless initiated by a user gesture, or don’t support it.
+         }
+      }
+
+      frame.addEventListener('click', toggleFullscreen);
+
+      // Convenience: press "f" on desktop
+      window.addEventListener('keydown', (e) => {
+         if (e.key.toLowerCase() === 'f') toggleFullscreen();
+      });
+   </script>
+</body>
+</html>

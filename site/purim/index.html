@@ -3,7 +3,7 @@
 <head>
    <meta charset="utf-8" />
    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-   <title>Fullscreen Image</title>
+   <title>Fullscreen Video</title>
 
    <style>
       html, body {
@@ -12,7 +12,6 @@
          background: #000;
       }
 
-      /* Full-viewport frame (handles notches via safe-area padding) */
       .frame {
          position: fixed;
          inset: 0;
@@ -30,18 +29,14 @@
          touch-action: manipulation;
       }
 
-      /* The key: preserve aspect ratio and never distort */
-      img {
+      video {
          width: 100%;
          height: 100%;
-         object-fit: contain;     /* no distortion, no cropping */
+         object-fit: contain;     /* no distortion; change to cover to fill+crop */
          object-position: center;
-         user-select: none;
-         -webkit-user-drag: none;
-         image-orientation: from-image; /* respects EXIF rotation where supported */
+         background: #000;
       }
 
-      /* Optional: a tiny hint */
       .hint {
          position: fixed;
          left: 12px;
@@ -57,38 +52,65 @@
 
 <body>
    <div class="frame" id="frame">
-      <img id="hero" src="purim.jpg" alt="" />
+      <!-- Replace src, OR pass ?video=https://example.com/clip.mp4 -->
+      <video id="vid"
+             src="purim.mp4"
+             playsinline
+             muted
+             loop
+             autoplay
+             controls>
+      </video>
    </div>
 
+   <div class="hint">Tap/click to toggle fullscreen (if supported)</div>
+
    <script>
-      const img = document.getElementById('hero');
+      const vid = document.getElementById('vid');
       const frame = document.getElementById('frame');
 
-      // Allow: index.html?img=URL_ENCODED_IMAGE_URL
+      // Allow: index.html?video=URL
       const params = new URLSearchParams(location.search);
-      const url = params.get('img');
-      if (url) img.src = url;
+      const url = params.get('video');
+      if (url) vid.src = url;
 
-      // Fullscreen toggle (note: iOS Safari is limited here)
+      // On many mobile browsers, autoplay requires muted + playsinline (set above).
+      // Also, some will refuse autoplay until a user gesture — so we try to start on tap.
+      async function ensurePlay() {
+         try { await vid.play(); } catch {}
+      }
+
       async function toggleFullscreen() {
-         const root = document.documentElement;
-
          try {
-            if (!document.fullscreenElement && root.requestFullscreen) {
-               await root.requestFullscreen();
-            } else if (document.fullscreenElement && document.exitFullscreen) {
+            if (document.fullscreenElement) {
                await document.exitFullscreen();
+               return;
+            }
+
+            // Prefer making the VIDEO fullscreen if possible
+            if (vid.requestFullscreen) {
+               await vid.requestFullscreen();
+            } else if (frame.requestFullscreen) {
+               await frame.requestFullscreen();
             }
          } catch {
-            // Some browsers block fullscreen unless initiated by a user gesture, or don’t support it.
+            // ignored
          }
       }
 
-      frame.addEventListener('click', toggleFullscreen);
+      // First tap: play (if needed) and request fullscreen (if supported)
+      frame.addEventListener('click', async () => {
+         await ensurePlay();
+         await toggleFullscreen();
+      });
 
-      // Convenience: press "f" on desktop
-      window.addEventListener('keydown', (e) => {
+      // Desktop convenience
+      window.addEventListener('keydown', async (e) => {
          if (e.key.toLowerCase() === 'f') toggleFullscreen();
+         if (e.key === ' ') {
+            e.preventDefault();
+            if (vid.paused) await ensurePlay(); else vid.pause();
+         }
       });
    </script>
 </body>
